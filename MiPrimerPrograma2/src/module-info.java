@@ -1,0 +1,2 @@
+module MiPrimerPrograma2 {
+}
