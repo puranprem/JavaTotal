@@ -12,34 +12,10 @@ public class PuzzleJava {
 	//	(Por ejemplo cuando envía el arreglo anterior, debe retornar un arreglo con los valores de 13,25,32).
 	
 	
-//	ArrayList <Integer> acti1_aL(int z){
-//		
-//		ArrayList <Integer> arr = new ArrayList <Integer>();
-//				
-//		Collections.min(arr);
-//		Collections.max(arr);
-//		int sume =0;
-//		for (int h = 0; h < arr.size()   ; h++) {
-//			sume = sume + sume [h];
-//		}
-//		
-//		
-//		
-//		
-//		return genDev;
-//	}
-//	
-	
-	
-	
 	
 	int [] acti1 () {
 		
 		int[] arreglo1 = {3,5,1,2,7,9,8,13,25,32};
-		//System.out.println(arreglo1[0]);
-	
-//		arreglo1 [arreglo1.length]= 11;
-//		System.out.println(arreglo1[arreglo1.length-1]);
 		int j=0;
 		for(int i=0; i<arreglo1.length;i++) {
 			if(arreglo1[i]>10) {
