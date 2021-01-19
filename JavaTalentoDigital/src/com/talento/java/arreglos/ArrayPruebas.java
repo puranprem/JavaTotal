@@ -1,4 +1,4 @@
-package Arreglos;
+package com.talento.java.arreglos;
 
 public class ArrayPruebas {
 

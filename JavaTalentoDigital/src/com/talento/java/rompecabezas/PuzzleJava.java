@@ -2,9 +2,9 @@ package com.talento.java.rompecabezas;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
+//import java.util.List;
 
 public class PuzzleJava {
 	//	1.-Crear un arreglo con los siguientes valores: 3,5,1,2,7,9,8,13,25,32. 
@@ -70,7 +70,7 @@ public class PuzzleJava {
 			
 			for (int i=0 ; i < arregloX.size() ; i++) {
 				
-				String variable = arregloX.get(i);
+				
 				arregloX.set(0, "Pepa");
 			}
 			
