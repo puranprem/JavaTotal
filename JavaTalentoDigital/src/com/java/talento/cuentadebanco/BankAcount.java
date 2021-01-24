@@ -10,16 +10,15 @@ public class BankAcount {
 	
 	//Métodos
 	
-	public void numeroAleatorioCuenta() {
+	private void numeroAleatorioCuenta() {
 		
-		
-					
+							
 			String numeroAleatorioCuenta ="";
+			
 				for(int i=0;i<10;i++){
 					int aleatorio = (int) Math.floor((Math.random()*8+1));
 					
 					numeroAleatorioCuenta=  (numeroAleatorioCuenta +""+ aleatorio);
-					
 					
 				}
 				System.out.println(numeroAleatorioCuenta);	
