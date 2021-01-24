@@ -7,6 +7,8 @@ public class GorillaTest {
 		g.throwSomething();
 		g.throwSomething();
 		g.throwSomething();
+		g.eatBanans();
+		g.eatBanans();
 		g.diplayEnergy();
 
 	}
