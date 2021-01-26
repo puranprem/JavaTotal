@@ -2,15 +2,16 @@ package com.java.talento.cuentadebanco;
 
 public class BankAcount {
 	private String numeroCuenta;
-	private double saldoCuenta;
+	private double saldoCuenta; //Cta. Cte.
 	private double saldoCuentaAhorros;
-	private static int contadorCuentas = 0;
-	private static double dineroAlmacenado=0;
+	public static int contadorCuentas = 0;
+	public static double dineroAlmacenado=0;
 	
 	
 	//Métodos
 	
-	private void numeroAleatorioCuenta() {
+	//Generador de numero de cuenta
+	private String generadorNumeroCuenta() {
 		
 							
 			String numeroAleatorioCuenta ="";
@@ -21,54 +22,97 @@ public class BankAcount {
 					numeroAleatorioCuenta=  (numeroAleatorioCuenta +""+ aleatorio);
 					
 				}
-				System.out.println(numeroAleatorioCuenta);	
 				
-				/*Integer numeroAleatorio = (int) (Math.random()*(999999999-100000000+1)+100000000);
-
-				System.out.println(numeroAleatorio);*/ // Preguntar por que no se puede agregar un dígito mas
+				return numeroAleatorioCuenta;	
 				
 			}
-				
+	
+//	Crear un método que permita al usuario depositar dinero en su cuenta corriente o 
+//	cuenta de ahorros, asegúrese de aumentar el total de dinero almacenado.
+	
+	//DEPOSITOS
+	
+	public double depositoCtaCte(double deposito) {
+		this.saldoCuenta= this.saldoCuenta+deposito;
+		this.dineroAlmacenado = this.dineroAlmacenado + deposito;
+		return this.saldoCuenta;
+	}	
+	
+	public double depositoCtaAhorro(double deposito) {
+		this.dineroAlmacenado = this.dineroAlmacenado + deposito;
+		this.saldoCuentaAhorros= this.saldoCuentaAhorros+deposito;
+		return this.saldoCuentaAhorros;
+	}	
 		
 	
+	// RETIROS
 	
-	// Constructores
-	public BankAcount () {
+	public double retiroCtaCte(double giro) {
+		this.dineroAlmacenado = this.dineroAlmacenado - giro;
+		
+		this.saldoCuenta= this.saldoCuenta-giro;
+		return this.saldoCuenta;
+	}	
+	
+	public double retiroCtaAhorro(double giro) {
+		this.dineroAlmacenado = this.dineroAlmacenado - giro;
+		this.saldoCuentaAhorros= this.saldoCuentaAhorros-giro;
+		return this.saldoCuentaAhorros;
+	}	
+	
+	
+	// VER SALDOS
+	
+	public double cartola() {
+		
+
+		return saldoCuenta;
 		
 	}
 	
-	public BankAcount (String cuenta,double saldo,double ahorro) {
-		
-	}
+//Constructores	
 	
-	public BankAcount(String numeroCuenta, Double saldoCuenta, Double saldoCuentaAhorros) {
-		this.numeroCuenta = numeroCuenta;
-		this.saldoCuenta = saldoCuenta;
-		this.saldoCuentaAhorros = saldoCuentaAhorros;
-		
-	}
 	
-	// Getters and Setters
-	public final String getNumeroCuenta() {
+	
+	public BankAcount() {
+		
+		this.numeroCuenta = generadorNumeroCuenta();
+		contadorCuentas++;
+	}
+
+
+	public String getNumeroCuenta() {
 		return numeroCuenta;
 	}
-	public final Double getSaldoCuenta() {
+
+
+	public void setNumeroCuenta(String numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
+
+
+	public double getSaldoCuenta() {
 		return saldoCuenta;
 	}
-	public final Double getSaldoCuentaAhorros() {
+
+
+	public void setSaldoCuenta(double saldoCuenta) {
+		this.saldoCuenta = saldoCuenta;
+	}
+
+
+	public double getSaldoCuentaAhorros() {
 		return saldoCuentaAhorros;
 	}
-	public static final int getContadorCuentas() {
-		return contadorCuentas;
+
+
+	public void setSaldoCuentaAhorros(double saldoCuentaAhorros) {
+		this.saldoCuentaAhorros = saldoCuentaAhorros;
 	}
 
-	public static double getDineroAlmacenado() {
-		return dineroAlmacenado;
-	}
 
-	public static void setDineroAlmacenado(double dineroAlmacenado) {
-		BankAcount.dineroAlmacenado = dineroAlmacenado;
-	}
+	// Getters and Setters
+	
 	
 
 }
